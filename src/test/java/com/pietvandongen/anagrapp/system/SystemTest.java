@@ -48,7 +48,7 @@ public class SystemTest {
                         .findElements(By.tagName("li"))
                         .isEmpty());
 
-        List<String> expected = Arrays.asList("piet", "etip", "tiep");
+        List<String> expected = Arrays.asList("piet", "ba");
         List<String> actual = driver
                 .findElement(By.id("anagrams"))
                 .findElements(By.tagName("li"))

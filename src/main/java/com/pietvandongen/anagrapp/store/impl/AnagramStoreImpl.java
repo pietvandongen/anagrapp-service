@@ -15,12 +15,17 @@ public class AnagramStoreImpl implements AnagramStore {
 
     @Override
     public Set<String> findAnagrams(String word) {
-        //@ todo 
-        return Collections.emptySet();
+        Set<String> anagrams = storedAnagrams.get(word);
+        
+        if (anagrams == null) {
+            return Collections.emptySet();
+        }
+
+        return anagrams;
     }
 
     @Override
     public void storeAnagrams(String word, Set<String> anagrams) {
-        // @todo 
+        storedAnagrams.put(word, anagrams);
     }
 }

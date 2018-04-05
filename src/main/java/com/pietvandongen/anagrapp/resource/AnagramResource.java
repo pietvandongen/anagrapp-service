@@ -9,7 +9,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.Arrays;
+import java.util.Set;
 
 @Path("anagram")
 public class AnagramResource {
@@ -26,8 +26,8 @@ public class AnagramResource {
     @Path("/{word}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAnagrams(@PathParam("word") String word) {
-        // @todo
+        Set<String> anagrams = anagramService.getAnagrams(word);
 
-        return Response.ok().entity(Arrays.asList("piet", "tiep", "etip")).build();
+        return Response.ok().entity(anagrams).build();
     }
 }
